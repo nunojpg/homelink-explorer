@@ -27,6 +27,7 @@ class Ans(Enum):
     ch_tx_fixed            = 'z\rt0068140000020*000000\r'
     ch_tx_rolling          = 'z\rt0068140000030*000000\r'
     ch_learn_complete      = 'z\rt0068140000040*000000\r'
+    ch_learn_rolling       = 'z\rt0068140000050*000000\r'
     ch_learn_ongoing       = 'z\rt0068140000070*000000\r'
     ch_mode_change_rolling = 'z\rt0068140000080*000000\r'
     ch_learn_fail          = 'z\rt00681400000B0*000000\r'
