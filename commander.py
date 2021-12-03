@@ -129,7 +129,7 @@ class LUC:
 
     def openAsMonitor(self):
         self.ser.write(b'l\r')
-        if self.ser.readline() != b'\r':
+        if self.ser.read(1) != b'\r':
             raise Exception()
 
     def frameTX(self, id, data):
@@ -170,6 +170,15 @@ class LIN(threading.Thread):
         print("Firmware " + lin.requestFirmwareVersion())
         lin.highSpeed()
         lin.openAsMonitor()
+        #print("Open as monitor")
+        #while not self.stopped():
+        #    string = ""
+        #    ch = '0'
+        #    while ch != '\r':
+        #        ch = lin.ser.read(1).decode("utf-8")
+        #        string += ch
+        #    print(string)
+        #    string = ""
         global cmd
         while not self.stopped():
             if cmd != Cmd.disable:
